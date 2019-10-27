@@ -7,11 +7,11 @@ class Flower {
  float x;        // x-position of the center of the flower
  float y;        // y-position of the center of the flower
  int petalColor; // hexadecimal number for the color of petals
+ 
  float speedX = random(30);
  float speedY = random(30);
+ float centerColor = #C80000;
  
- 
-
  
  
 Flower(float temp_r, int temp_n_petals, float temp_x, float temp_y, int temp_petalColor) {
@@ -36,7 +36,7 @@ void display () {
   ballY=y + r*sin(i);
   ellipse(ballX,ballY,r,r); 
   }
-  fill(200,0,0);
+  fill(centerColor);
   ellipse(x,y,r*1.2,r*1.2);
 
 }
@@ -50,7 +50,38 @@ void movement () {
    
 }
 
+void specialMovement () {
+  
+ x = mouseX - speedX;
+ 
+ y = mouseY - speedY;
+ 
+ //Color changing part
+ if (mousePressed && (mouseButton == LEFT)) {
+     centerColor = random(255);
+   
+ }
+ 
 
+//Unfinished stuff
+ 
+/*
+ if(mouseX > x + 50 && mouseX < x - 50 && mouseY > y + 50 && mouseY < y - 50 ) {
+ centerColor = random(255); 
+
+ }
+ */
+ 
+}
+  /*
+void changeColor (float temp_centerColor) {
+  
+  centerColor = temp_centerColor;
+
+
+  
+}
+*/
 
 void bounce () {
   

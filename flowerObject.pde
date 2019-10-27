@@ -2,6 +2,8 @@ Flower myFlower1;  // the first instance of the Flower class
 Flower myFlower2;
 Flower myFlower3;
 
+float randNum = random(255);
+
 void setup() {
   size(1600,1200);
   background(#43AF76);
@@ -15,13 +17,10 @@ void setup() {
   myFlower2 = new Flower(_r1,_petals,_x,_y,_pc);
   myFlower3 = new Flower(_r1,_petals,_x+random(199,200),_y,_pc);
 
-//  myFlower2 = new Flower();
-//   myFlower3 = new Flower();
 }
 
 void draw(){
   background(#43AF76);
-  
   
   myFlower1.display();
   myFlower1.movement();
@@ -31,15 +30,9 @@ void draw(){
   myFlower2.movement();
   myFlower2.bounce();
   
-  
   myFlower3.display();
- myFlower3.movement();
+  myFlower3.specialMovement();
   myFlower3.bounce();
 
-  
-  
-  
-    
-   
   
 }
